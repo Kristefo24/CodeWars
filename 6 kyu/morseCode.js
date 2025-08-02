@@ -8,11 +8,10 @@ const morseChars = {
 }
 
 decodeMorse = function(morseCode){
-    // return morseCode.split(' ').map(item => {
-    //     return Object.keys(morseChars).find(key => morseChars[key] === item)
-    // })
-    const key = ' '
-    if(Object.keys(morseChars).find(key => morseChars[keys]))
+    return morseCode.split(' ').map(item => {
+        return Object.keys(morseChars)
+            .find(key => morseChars[key] === item)}).join(' ')
+                .split('  ').map(item => item.replace(/\s/g, '')).join(' ')
 }
 
-console.log(decodeMorse('.... . -.--   .--- ..- -.. .'))
+console.log(decodeMorse("-.-.--   - .... .   --.- ..- .. -.-. -.-   -... .-. --- .-- -.   ..-. --- -..-   .--- ..- -- .--. ...   --- ...- . .-.   - .... .   .-.. .- --.. -.--   -.. --- --. .-.-.-  "))
