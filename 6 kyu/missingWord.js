@@ -1,14 +1,12 @@
 function missingWord(nums, str) {
     if(nums.length !== 3) return 'invalid'
-    nums = nums.sort((a, b) => a - b)
+    str = str.replace(/\s/g, '').split('')
 
-    const message = str.replace(/\s/g, '').split('').map((item, index) => {
-        for(const num of nums){
-            if(index === num) return item
-        }
+    const message = nums.sort((a, b) => a - b).map(position => {
+        return str[position]
     }).join('')
-
+    
     return message.split('').length === 3 ? message.toLowerCase() : 'No mission today'
 }
 
-console.log(missingWord([0, 3, 5], "I love you"))
+console.log(missingWord([2,0,2], " cE y"))
